@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\model\\db\\newsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:model\\db\\newsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginRegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Controllers\\LoginRegisterController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginRegisterController.cs",
+              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Controllers\\LoginRegisterController.cs",
+              "RelativeToolTip": "Controllers\\LoginRegisterController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T13:31:27.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NewsDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\DB\\NewsDbContext.cs",
+              "RelativeDocumentMoniker": "Model\\DB\\NewsDbContext.cs",
+              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\DB\\NewsDbContext.cs",
+              "RelativeToolTip": "Model\\DB\\NewsDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T13:29:17.733Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

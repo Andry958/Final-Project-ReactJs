@@ -27,6 +27,22 @@ export default function Register() {
         }
         setUsers([...users, { username, password, role, sourcesUser }]);
         setUser({ username, role, sourcesUser });
+
+        fetch("https://localhost:7243/api/lr/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                role: role
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error("Register error:", error));
+
         console.log("Користувач зареєстрований:", users);
         navigate("/home");
     };

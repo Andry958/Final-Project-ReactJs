@@ -79,6 +79,18 @@ const Layout = () => {
                     >
                         Вийти
                     </Button>
+                    
+                ),
+                (
+                    <Button
+                        type="primary"
+                        style={{ position: 'absolute', right: 112, top: 16 }}
+                        
+                    >
+                        <Link to= "pr">
+                        Profile
+                        </Link>
+                    </Button>
                 )
             </Header>
 

@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "NewsAppBecend.Controllers.LoginRegisterController",
+    "Method": "Login",
+    "RelativePath": "api/lr/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "l",
+        "Type": "NewsAppBecend.Controllers.LoginRegisterController\u002BLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NewsAppBecend.Controllers.LoginRegisterController",
+    "Method": "Register",
+    "RelativePath": "api/lr/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "l",
+        "Type": "NewsAppBecend.Controllers.LoginRegisterController\u002BRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
