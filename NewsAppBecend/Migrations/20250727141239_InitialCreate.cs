@@ -45,6 +45,23 @@ namespace NewsAppBecend.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EditionsItem",
+                columns: table => new
+                {
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EditionsItem", x => x.Name);
+                    table.ForeignKey(
+                        name: "FK_EditionsItem_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserSelectedEditions",
                 columns: table => new
                 {
@@ -64,6 +81,11 @@ namespace NewsAppBecend.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_EditionsItem_UserId",
+                table: "EditionsItem",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserSelectedEditions_UserId",
                 table: "UserSelectedEditions",
                 column: "UserId");
@@ -72,6 +94,9 @@ namespace NewsAppBecend.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "EditionsItem");
+
             migrationBuilder.DropTable(
                 name: "NewsItems");
 

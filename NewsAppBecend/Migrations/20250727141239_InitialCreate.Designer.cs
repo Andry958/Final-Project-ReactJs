@@ -12,7 +12,7 @@ using NewsAppBecend.Model.DB;
 namespace NewsAppBecend.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
-    [Migration("20250727132952_InitialCreate")]
+    [Migration("20250727141239_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,6 +24,21 @@ namespace NewsAppBecend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Name");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("EditionsItem");
+                });
 
             modelBuilder.Entity("NewsAppBecend.Model.NewsItem", b =>
                 {
@@ -109,6 +124,13 @@ namespace NewsAppBecend.Migrations
                     b.ToTable("UserSelectedEditions", (string)null);
                 });
 
+            modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
+                {
+                    b.HasOne("NewsAppBecend.Model.User", null)
+                        .WithMany("Editions")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("NewsAppBecend.Model.UserSelectedEditions", b =>
                 {
                     b.HasOne("NewsAppBecend.Model.User", "User")
@@ -118,6 +140,11 @@ namespace NewsAppBecend.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NewsAppBecend.Model.User", b =>
+                {
+                    b.Navigation("Editions");
                 });
 #pragma warning restore 612, 618
         }

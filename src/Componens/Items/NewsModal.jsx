@@ -1,6 +1,6 @@
 import { CheckOutlined } from '@ant-design/icons';
 import React, { useContext, useState } from 'react';
-import { SourcesContext } from '../context/SourcesContext';
+
 import { UserContext } from '../context/UserContext';
 import { Button, message } from 'antd';
 
@@ -17,7 +17,6 @@ const modalStyles = {
         textAlign: 'center',
     },
 };
-
 export default function NewsModal({ news, isOpen, onClose }) {
     const [messageApi, contextHolder] = message.useMessage();
     const { user, sourcesUser, setSourcesUser } = useContext(UserContext);
@@ -37,7 +36,6 @@ export default function NewsModal({ news, isOpen, onClose }) {
         messageApi.info(`Джерело "${news.source?.name}" видалено з обраного`);
     }
 };
-
     return (
 
 
@@ -60,7 +58,6 @@ export default function NewsModal({ news, isOpen, onClose }) {
                         :
                         <></>
                     }
-
                 </p>
                 <a href={news.url} target="_blank" rel="noopener noreferrer">Читати повністю</a>
                 <br />

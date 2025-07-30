@@ -2,12 +2,17 @@ import React, { use, useContext } from 'react';
 import { Breadcrumb, Layout as LayoutAntd, Menu, theme, Button } from 'antd';
 import {
     DatabaseFilled,
-    HomeFilled,
 } from '@ant-design/icons';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext'; 
 
-
+import {
+  HomeOutlined,
+  ReadOutlined,
+  BookOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 const { Header, Content, Footer } = LayoutAntd;
 
 
@@ -37,25 +42,45 @@ const Layout = () => {
     };
 
     
-
-    const items = [
-        {
-            key: '1',
-            label: <Link to="/home">Home</Link>,
-            icon: <HomeFilled />
-        },
-        user?.role !== 'user'  && {
-            key: '2',
-            label: <Link to="/newslist">News</Link>,
-            icon: <DatabaseFilled />,
-        },
-         {
-            key: '3',
-            label: <Link to="/newsbyauthor">Selected Edition</Link>,
-            icon: <DatabaseFilled />,
-        },
-
-    ]
+const items = [
+  {
+    key: '1',
+    label: <Link to="/home">Home</Link>,
+    icon: <HomeOutlined />,
+  },
+  user?.role !== 'user'&& user != null && {
+    key: '2',
+    label: <Link to="/newslist">News</Link>,
+    icon: <ReadOutlined />,
+  },
+  user != null && {
+    key: '3',
+    label: <Link to="/newsbyauthor">Selected Edition</Link>,
+    icon: <BookOutlined />,
+  },
+  user != null && {
+    key: '4',
+    label: <Link to="/pr">Profile</Link>,
+    icon: <UserOutlined />,
+  },
+  user != null && {
+    key: '5',
+    style: { position: 'absolute', right: 0, top: 0 },
+    label: <Link to="/" onClick={handleLogout}>Exit</Link>,
+    icon: <LogoutOutlined />,
+  },
+    user == null && {
+    key: '5',
+    style: { position: 'absolute', right: 0, top: 0 },
+    label: <Link to="/">Sing in</Link>,
+    icon: <LogoutOutlined />,
+  },
+    user?.role === 'admin' && {
+    key: '6',
+    label: <Link to="/admins">Admins</Link>,
+    icon: <DatabaseFilled />,
+    },
+]
 
 
     return (
@@ -71,27 +96,7 @@ const Layout = () => {
                     items={items}
                     style={{ flex: 1, minWidth: 0 }}
                 />
-                (
-                    <Button
-                        type="primary"
-                        style={{ position: 'absolute', right: 32, top: 16 }}
-                        onClick={handleLogout}
-                    >
-                        Вийти
-                    </Button>
-                    
-                ),
-                (
-                    <Button
-                        type="primary"
-                        style={{ position: 'absolute', right: 112, top: 16 }}
-                        
-                    >
-                        <Link to= "pr">
-                        Profile
-                        </Link>
-                    </Button>
-                )
+
             </Header>
 
             <Content style={{ padding: '0 48px' }}>

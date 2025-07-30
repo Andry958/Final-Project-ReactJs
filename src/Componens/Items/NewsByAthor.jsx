@@ -15,12 +15,11 @@ const sortOptions = [
 
 export default function NewsByAuthor() {
     const { value } = useContext(AllNewsContext);
-    const { sources, selectedAuthors } = useContext(SourcesContext);
+    const { sources } = useContext(SourcesContext);
     const [search, setSearch] = useState('');
     const [sortBy, setSortBy] = useState('publishedAt');
     const [selectedSource, setSelectedSource] = useState('');
-    const { sourcesUser } = useContext(UserContext);
-     const { user } = useContext(UserContext);
+     const {user,sourcesUser } = useContext(UserContext);
     
 
 
@@ -44,7 +43,6 @@ export default function NewsByAuthor() {
     });
 
     return (
-
          <>
             {user ?
                 <>
@@ -79,9 +77,6 @@ export default function NewsByAuthor() {
                 :
                 <h2>Увійдіть щоб бачити інформацію</h2>
             }
-
         </>
-
-        
     );
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NewsAppBecend.Model.DB;
 
@@ -11,9 +12,11 @@ using NewsAppBecend.Model.DB;
 namespace NewsAppBecend.Migrations
 {
     [DbContext(typeof(NewsDbContext))]
-    partial class NewsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250727142937_t")]
+    partial class t
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

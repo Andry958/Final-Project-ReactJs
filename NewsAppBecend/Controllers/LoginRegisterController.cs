@@ -37,7 +37,9 @@ namespace NewsAppBecend.Controllers
             {
                 Username = l.Username,
                 Password = l.Password,
-                Role = l.Role
+                Role = l.Role,
+                Editions = new List<EditionsItem>()
+
             };
 
             if (_context.Users.Any(u => u.Username == l.Username))
@@ -58,6 +60,7 @@ namespace NewsAppBecend.Controllers
             public string Username { get; set; }
             public string Password { get; set; }
             public string Role { get; set; }
+            public List<string> Editions { get; set; } = new List<string>();
         }
     }
 }

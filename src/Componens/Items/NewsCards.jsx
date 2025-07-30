@@ -20,16 +20,13 @@ export default function NewsCards({ customNews}) {
     const closeModal = () => setIsOpen(false);
 
     return (
-        
         <div className='divCard'>
-
             {newsList.map((i, index) =>
                 <CardItem
                     key={index}
                     obj={i}
                     openModal={() => openModal(i)}
                 />
-                
             )}
             <NewsModal
                 news={selectedNews}

@@ -1,16 +1,12 @@
 import { useState, useContext } from 'react';
 import { Button, Form, Input, Select, Space } from 'antd';
-
 import { AllNewsContext } from '../context/AllContext';
 import { Link, Navigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { SourcesContext } from '../context/SourcesContext';
-const { TextArea } = Input;
 import {  message } from 'antd';
-
-
-
+const { TextArea } = Input;
 
 const tailLayout = {
     wrapperCol: { offset: 4, span: 16 },
@@ -26,9 +22,7 @@ const AddProduct = () => {
     const { sources } = useContext(SourcesContext);
     const [form] = Form.useForm();
 
-
     const { user } = useContext(UserContext);
-
 
     const onSubmit = async (values) => {
         const newProduct = {

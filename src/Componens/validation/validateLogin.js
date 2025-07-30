@@ -1,5 +1,5 @@
 export default  function validateLogin(username, password) {
-    if (username.length < 8 || password.length < 8) {
+    if (username.length < 3 || password.length < 8) {
         return {
             success: false,
             message: "Ім'я користувача та пароль повинні бути щонайменше 8 символів.",

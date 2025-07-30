@@ -30,5 +30,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NewsAppBecend.Controllers.MainController",
+    "Method": "GetNews",
+    "RelativePath": "api/main",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NewsAppBecend.Controllers.MainController",
+    "Method": "AddNews",
+    "RelativePath": "api/main",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newsItems",
+        "Type": "System.Collections.Generic.List\u00601[[NewsAppBecend.Model.NewsItem, NewsAppBecend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

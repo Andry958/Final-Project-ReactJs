@@ -10,7 +10,7 @@ namespace NewsAppBecend.Model.DB
 
         public DbSet<NewsItem> NewsItems { get; set; }
         public DbSet<UserSelectedEditions> UserSelectedEditions { get; set; }
-
+        public DbSet<EditionsItem> EditionsItems { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -18,6 +18,7 @@ namespace NewsAppBecend.Model.DB
             modelBuilder.Entity<NewsItem>().ToTable("NewsItems");
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<UserSelectedEditions>().ToTable("UserSelectedEditions");
+            modelBuilder.Entity<EditionsItem>().ToTable("EditionsItems");
         }
     }
     
