@@ -6,6 +6,8 @@ import validateLogin from "../validation/validateLogin";
 import { AllNewsContext } from "../context/AllContext";
 
 export default function Register() {
+    const api = "https://localhost:5173/api/"
+
     const { users, setUsers, setUser, roles } = useContext(UserContext);
     const [form] = Form.useForm();
     const navigate = useNavigate();
@@ -33,9 +35,8 @@ export default function Register() {
                 alert("Невірний пароль адміністратора");
                 return;
             }
-            setUsers([...users, { name, description, username, password, role, sourcesUser }]);
+            setUsers([...users, { name, description, email, username, password, role, sourcesUser }]);
             setUser({ name, description, email, username, role, sourcesUser });
-
 
             navigate("/home");
             return;
@@ -43,6 +44,8 @@ export default function Register() {
         else {
             setUsers([...users, { name, description, username, password, role, sourcesUser }]);
             setUser({ name, description, email, username, role, sourcesUser });
+            console.log("User registered:", { name, description, email, username, role, sourcesUser });
+
             navigate("/home");
         }
     };

@@ -35,11 +35,13 @@ namespace NewsAppBecend.Controllers
 
             User user = new User
             {
+                Description = l.Username,
+                Name = l.Username,
+                Email = l.Username + "@example.com",
                 Username = l.Username,
                 Password = l.Password,
                 Role = l.Role,
                 Editions = new List<EditionsItem>()
-
             };
 
             if (_context.Users.Any(u => u.Username == l.Username))
@@ -57,10 +59,13 @@ namespace NewsAppBecend.Controllers
         }
         public class RegisterDto
         {
+            public string Description { get; set; }
+            public string Name { get; set; }
+            public string Email { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
             public string Role { get; set; }
-            public List<string> Editions { get; set; } = new List<string>();
+            public List<EditionsItem> Editions { get; set; }
         }
     }
 }

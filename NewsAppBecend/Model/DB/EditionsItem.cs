@@ -4,7 +4,7 @@ namespace NewsAppBecend.Model.DB
 {
     public class EditionsItem
     {
-        [Key]
+        public Guid Id { get; set; }
         public string Name { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace NewsAppBecend.Migrations
                 name: "NewsItems",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -35,6 +35,9 @@ namespace NewsAppBecend.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -45,49 +48,26 @@ namespace NewsAppBecend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EditionsItem",
+                name: "EditionsItems",
                 columns: table => new
                 {
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EditionsItem", x => x.Name);
+                    table.PrimaryKey("PK_EditionsItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_EditionsItem_Users_UserId",
+                        name: "FK_EditionsItems_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "UserSelectedEditions",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Edition = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserSelectedEditions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserSelectedEditions_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
-                name: "IX_EditionsItem_UserId",
-                table: "EditionsItem",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserSelectedEditions_UserId",
-                table: "UserSelectedEditions",
+                name: "IX_EditionsItems_UserId",
+                table: "EditionsItems",
                 column: "UserId");
         }
 
@@ -95,13 +75,10 @@ namespace NewsAppBecend.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "EditionsItem");
+                name: "EditionsItems");
 
             migrationBuilder.DropTable(
                 name: "NewsItems");
-
-            migrationBuilder.DropTable(
-                name: "UserSelectedEditions");
 
             migrationBuilder.DropTable(
                 name: "Users");

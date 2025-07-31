@@ -24,13 +24,18 @@ namespace NewsAppBecend.Migrations
 
             modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("Name");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
@@ -85,6 +90,18 @@ namespace NewsAppBecend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -102,42 +119,11 @@ namespace NewsAppBecend.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("NewsAppBecend.Model.UserSelectedEditions", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Edition")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserSelectedEditions", (string)null);
-                });
-
             modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
                 {
                     b.HasOne("NewsAppBecend.Model.User", null)
                         .WithMany("Editions")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("NewsAppBecend.Model.UserSelectedEditions", b =>
-                {
-                    b.HasOne("NewsAppBecend.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("NewsAppBecend.Model.User", b =>
