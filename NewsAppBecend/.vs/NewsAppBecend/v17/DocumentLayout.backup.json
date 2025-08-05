@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Migrations\\20250731093059_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250731093059_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\controllers\\editionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:controllers\\editionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\model\\newsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:model\\newsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\model\\db\\newsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:model\\db\\newsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|c:\\users\\111\\desktop\\main\\jsreact\\final-project-reactjs\\newsappbecend\\model\\db\\editionsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{802529B5-1718-4FB9-ABDC-80F76D5CF268}|NewsAppBecend.csproj|solutionrelative:model\\db\\editionsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,19 +27,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250731093059_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Migrations\\20250731093059_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250731093059_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Migrations\\20250731093059_InitialCreate.cs",
-              "RelativeToolTip": "Migrations\\20250731093059_InitialCreate.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "EditionsController.cs",
+              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Controllers\\EditionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EditionsController.cs",
+              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Controllers\\EditionsController.cs",
+              "RelativeToolTip": "Controllers\\EditionsController.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAuwLgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T09:30:59.851Z",
+              "WhenOpened": "2025-08-03T19:20:50.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "NewsItem.cs",
+              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\NewsItem.cs",
+              "RelativeDocumentMoniker": "Model\\NewsItem.cs",
+              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\NewsItem.cs",
+              "RelativeToolTip": "Model\\NewsItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T10:31:54.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "NewsDbContext.cs",
               "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\DB\\NewsDbContext.cs",
               "RelativeDocumentMoniker": "Model\\DB\\NewsDbContext.cs",
@@ -48,19 +60,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-31T09:30:51.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditionsItem.cs",
-              "DocumentMoniker": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\DB\\EditionsItem.cs",
-              "RelativeDocumentMoniker": "Model\\DB\\EditionsItem.cs",
-              "ToolTip": "C:\\Users\\111\\Desktop\\Main\\JSReact\\Final-Project-ReactJs\\NewsAppBecend\\Model\\DB\\EditionsItem.cs",
-              "RelativeToolTip": "Model\\DB\\EditionsItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T09:30:49.829Z",
               "EditorCaption": ""
             }
           ]

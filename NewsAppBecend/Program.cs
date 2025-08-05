@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseStaticFiles();
 // ✅ Включаємо CORS перед Authorization
 app.UseCors("AllowFrontend");
 

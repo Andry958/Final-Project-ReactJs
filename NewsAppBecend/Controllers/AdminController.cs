@@ -9,22 +9,14 @@ namespace NewsAppBecend.Controllers
 {
     [Route("api/main")]
     [ApiController]
-    public class MainController : ControllerBase
+    public class AdminController : ControllerBase
     {
         private readonly NewsDbContext _context;
-        public MainController(NewsDbContext context)
+        public AdminController(NewsDbContext context)
         {
             _context = context;
         }
 
-        [HttpGet]
-        public IActionResult GetNews()
-        {
-            var newsItems = _context.NewsItems.ToList();
-            return Ok(newsItems);
-        }
-
-        // Змінено метод, щоб приймати список новин
         [HttpPost]
         public IActionResult AddNews([FromBody] List<NewsItem> newsItems)
         {
@@ -33,7 +25,6 @@ namespace NewsAppBecend.Controllers
                 return BadRequest("No news items provided.");
             }
 
-            // Валідація кожного об'єкта
             var invalidItems = newsItems.Where(n => string.IsNullOrEmpty(n.Title) || string.IsNullOrEmpty(n.Content)).ToList();
             if (invalidItems.Any())
             {
@@ -43,19 +34,16 @@ namespace NewsAppBecend.Controllers
             _context.NewsItems.AddRange(newsItems);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetNews), null, newsItems);
+            return Ok( newsItems);
         }
-        public class NewsItemDto
-        {
 
-            public string Author { get; set; }
-            public string Content { get; set; }
-            public string Description { get; set; }
-            public DateTime PublishedAt { get; set; }
-            public string Name { get; set; }
-            public string Title { get; set; }
-            public string Url { get; set; }
-            public string UrlToImage { get; set; }
+        [HttpDelete]
+        public IActionResult Delete()
+        {
+            _context.NewsItems.RemoveRange(_context.NewsItems);
+            _context.SaveChanges();
+            return Ok("All news items deleted successfully.");
         }
+
     }
 }

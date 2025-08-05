@@ -22,6 +22,21 @@ namespace NewsAppBecend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EditionsItemUser", b =>
+                {
+                    b.Property<Guid>("EditionsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UsersId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("EditionsId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("EditionsItemUser");
+                });
+
             modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -32,12 +47,7 @@ namespace NewsAppBecend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("EditionsItems", (string)null);
                 });
@@ -90,6 +100,10 @@ namespace NewsAppBecend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Avatar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -119,16 +133,19 @@ namespace NewsAppBecend.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("NewsAppBecend.Model.DB.EditionsItem", b =>
+            modelBuilder.Entity("EditionsItemUser", b =>
                 {
-                    b.HasOne("NewsAppBecend.Model.User", null)
-                        .WithMany("Editions")
-                        .HasForeignKey("UserId");
-                });
+                    b.HasOne("NewsAppBecend.Model.DB.EditionsItem", null)
+                        .WithMany()
+                        .HasForeignKey("EditionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("NewsAppBecend.Model.User", b =>
-                {
-                    b.Navigation("Editions");
+                    b.HasOne("NewsAppBecend.Model.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
